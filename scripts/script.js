@@ -12,6 +12,17 @@ window.addEventListener('DOMContentLoaded', () => {
     jsonString = localStorage.getItem("jsonArray");
     jsonString = JSON.parse(jsonString);
     console.log(jsonString);
+
+    var page = "eeeeeeeee (todo)";
+    for(var i=0; i<20; ++i /* each item in jsonString */){
+        console.log(jsonString[i].price);
+        var prod = document.createElement('product-item');
+        prod.setAttribute('src', jsonString[i].image );
+        prod.setAttribute('alt', jsonString[i].description );
+        prod.setAttribute('title', jsonString[i].title );
+        prod.setAttribute('price', jsonString[i].price );
+        document.getElementsByTagName('ul')[0].appendChild(prod);
+    }
 });
 
 async function fetchJson(){
